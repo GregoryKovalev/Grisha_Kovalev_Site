@@ -3,6 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* Масштаб задаётся ДО отрисовки первого кадра, иначе canvas успевает
+   нарисоваться в полный размер 2040px и страница «дёргается».
+   Формула та же, что в fit() в конце body. */
+(function(){
+  var k=Math.min(1,(window.innerWidth*0.65)/1360);
+  document.documentElement.style.setProperty('--k',k);
+})();
+</script>
 <title>Григорий Ковалёв — продуктовый тим-лид дизайнер</title>
 <meta name="description" content="Григорий Ковалёв — продуктовый тим-лид дизайнер из Санкт-Петербурга. 15 лет опыта, B2E и B2C.">
 
